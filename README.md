@@ -27,7 +27,7 @@ Gentor automates this process, but since rules often change, we provide a way to
 To help you get started, we provide additional files in this repository:
 
 - **[Default Script](examples/default-script.ts)** → A boilerplate script with the required structure.  
-- **[Type Definitions](types/match.d.ts)** → All available interfaces and objects documented in TypeScript.  
+- **[Type Definitions](types/match-information.d.ts)** → All available interfaces and objects documented in TypeScript.  
 - **[Example Scripts](examples/)** → Ready-to-use scripts showing common use cases.  
 
 ---
