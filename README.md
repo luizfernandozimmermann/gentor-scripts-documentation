@@ -86,6 +86,8 @@ Basic structure of the input and output data. For more info, access [the type fi
 
 ## 🧪 Testing your script
 
+You can test your script locally in your own machine or use Gentor's integrated Playground.
+
 Gentor provides an integrated **Playground** where you can test your script before using it in real matches:
 
 - You can **select players** to automatically generate match inputs.
