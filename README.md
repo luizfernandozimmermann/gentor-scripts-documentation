@@ -45,16 +45,61 @@ This line is required by Gentor’s script engine to identify where the code act
 
 ---
 
+## 🏛️ Basic Structure
+Basic structure of the input and output data. For more info, access [the type file](types/match-information.d.ts).
+
+### ⬇️ Input Structure: `MatchInformation`
+
+    MatchInformation
+    ├── tournament? : Tournament
+    ├── spreadsheet : Spreadsheet
+    │   ├── characters : SpreadsheetCharacter[]
+    │   └── configurations : SpreadsheetConfigurations
+    ├── teamMode : TeamMode
+    ├── side1 : MatchTeam
+    │   ├── name : string
+    │   ├── players : MatchTeamPlayer[]
+    │   └── box : MatchTeamBox
+    │       └── characters : MatchTeamBoxCharacter[]
+    ├── side2 : MatchTeam (same structure as side1)
+    ├── chalengeType : ChalengeType
+    └── numberOfBosses? : 2 | 3
+
+### ⬆️ Output Structure: `DraftConfiguration`
+
+    DraftConfiguration
+    ├── picks : 8 | 12
+    ├── weaponBanLocation : WeaponBanLocation
+    ├── side1 : DraftTeamConfiguration
+    │   ├── initialBans : number
+    │   ├── middleBans : number
+    │   ├── weaponBans : number
+    │   ├── extraBans : number
+    │   ├── jokerBans : number
+    │   ├── allowedExtraBans? : Character[]
+    │   └── allowedJokerBans? : Character[]
+    ├── side2 : DraftTeamConfiguration (same structure as side1)
+    └── permaBans : Character[]
+
+
+---
+
 ## 🧪 Testing your script
 
 Gentor provides an integrated **Playground** where you can test your script before using it in real matches:
 
-- You can **select players** to automatically generate match inputs.  
+- You can **select players** to automatically generate match inputs.
+![Select Players Example](./assets/select_players_example.gif "Select Players Example")
 - The **input JSON** can also be edited manually.  
-- You can use `console.log` inside your script → Gentor provides a **safe console** to capture and display your logs.  
+![Edit Input Example](./assets/edit_input_example.gif "Edit Input Example")
+- You can use `console.log` inside your script → Gentor provides a **safe console** to capture and display your logs.
+![Safe Console Example](./assets/safe_console_example.gif "Safe Console Example")
 - Errors will also appear in the integrated console.
+![Script Error Example](./assets/script_error_example.gif "Script Error Example")
 
 This makes it easy to debug and validate your logic without leaving the site.
+
+_The integrated playground may or may not undergo changes, differing from the images shown._
 
 ---
 
