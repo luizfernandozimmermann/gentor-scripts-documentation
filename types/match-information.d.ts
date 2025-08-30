@@ -10,8 +10,6 @@ export interface MatchInformation {
     side1: MatchTeam;
     /** Information about the second side in the match. */
     side2: MatchTeam;
-    /** The index of the round (e.g., 0 for the round 1, used in bo2). */
-    roundIndex: number;
     /** Type of game chalenge. */
     chalengeType: ChalengeType;
     /** Number of bosses that will be played against (only for stygian onslaught). */
@@ -192,7 +190,7 @@ export interface DraftConfiguration {
     /** Configuration for side 2 in the draft. */
     side2: DraftTeamConfiguration;
     /** List of characters that are permanently banned at the game. */
-    permaBans: Character[]
+    permaBans: Character[];
 }
 
 /** Defines when weapon bans occur in the draft process. */
@@ -215,4 +213,15 @@ export interface DraftTeamConfiguration {
     extraBans: number;
     /** Number of joker bans allowed for the team. */
     jokerBans: number;
+    /** Allowed extra bans that the player can do.
+     * It will only allow the player to ban (when extra) the characters informed here, also counting the default draft rules (e.g. same player can't ban the same character twice).
+     * When it is not informed, it will only count the default draft rules.
+     * Be careful to allow equal or more characters than the player can ban to prevent the draft from getting stuck. */
+    allowedExtraBans?: Character[];
+    /**
+     * Allowed joker bans that the player can do. 
+     * It will only allow the player to ban (when joker) the characters informed here, also counting the default draft rules (e.g. same player can't ban the same character twice).
+     * When it is not informed, it will only count the default draft rules.
+     * Be careful to allow equal or more characters than the player can ban to prevent the draft from getting stuck. */
+    allowedJokerBans?: Character[];
 }

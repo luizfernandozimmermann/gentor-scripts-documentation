@@ -1735,7 +1735,6 @@ const matchInformation: MatchInformation = {
     },
     teamMode: TeamMode.SOLO,
     chalengeType: ChalengeType.ABYSS,
-    roundIndex: 0,
     side1: {
         name: "batatinho",
         players: [
